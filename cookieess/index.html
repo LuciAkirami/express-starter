@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="cookie-creator">Create Cookie</button>
+    <script>
+      const btnCookieCreator = document.getElementById("cookie-creator");
+      <!-- Will create a cookie when the user clicks on the button, hence a cookie created from client side-->
+      btnCookieCreator.addEventListener(
+        "click",
+        () => (document.cookie = "setfromclient=my-cookie-1")
+      );
+    </script>
+  </body>
+</html>
