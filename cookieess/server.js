@@ -5,7 +5,12 @@ app.get("/", (req, res) => {
   // below will create a cookie header from the server side
   // when user visits "/", then in the response header a set-cookie will be set
   // thus setting a cookie value in the user's broswer
-  res.setHeader("set-cookie", ["setfromserver=my-cookie-2"]);
+  res.setHeader("set-cookie", [
+    "setfromserver=my-cookie-2",
+    "jscantseethis=2;httponly",
+  ]);
+  // jscantseethis=2, this cookie is httponly, implies that, in broswer if you type "document.cookie",
+  // this cookie will not be listed. Though it can be viewd by opening the "Application" in devtools
   res.sendFile(`${__dirname}/index.html`);
 });
 

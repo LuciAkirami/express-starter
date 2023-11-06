@@ -7,6 +7,21 @@
   </head>
   <body>
     <button id="cookie-creator">Create Cookie</button>
+    <!-- even we are in localserver, we send cookies of other sites, when we include them in localserver -->
+    <!-- open example.com and add a cookie before launching this server (eg. examplecookie=1)-->
+    <a href="http://example.com">go to example.com</a>
+    <!-- when you click on above link, example.com will open and cookies you stored in the example.com 
+    can be seen in the request in network tab -->
+
+    <!-- open www.example.com and add a cookie before launching this server (eg. wexamplecookie=1)-->
+    <a href="http://www.example.com">go to www.example.com</a>
+    <!-- when you click on above link, www.example.com will open and cookies you stored in the www.example.com 
+      can be seen in the request in network tab -->
+
+    <!-- if we set document.cookie="secretcookie=2;samesite=strict" (with samesite=strict)in example.com, 
+    then we click the link on localhost for example.com, this cookie will not be found in the response header, because it only appears
+    when it is in the same site but when then this site is clicked through some other site-->
+
     <script>
       const btnCookieCreator = document.getElementById("cookie-creator");
       <!-- Will create a cookie when the user clicks on the button, hence a cookie created from client side-->
